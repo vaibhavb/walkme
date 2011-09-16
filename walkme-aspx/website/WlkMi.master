@@ -1,0 +1,46 @@
+<%@ Master Language="C#" AutoEventWireup="True" Inherits="Microsoft.Health.Applications.WalkMe.WlkMiMasterPage" CodeFile="WlkMi.master.cs" %>
+<%@ Register TagPrefix="WlkMi" TagName="HVHeader" Src="~/Controls/HVHeader.ascx" %>
+<%@ Register TagPrefix="WlkMi" TagName="HVFooter" Src="~/Controls/Footer.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head id="eltHead" runat="server">
+        <meta id="eltDescription" runat="server" name="description" content="" />
+        <meta id="eltKeywords" runat="server" name="keywords" content="" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>WlkMi</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+        <link href="css/wlkmi.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <form id="Form1" runat="server" style="margin:0px">
+            <div class="main">
+                <!--Header
+                <WlkMi:HVHeader HideNavLinks="false" ID="Header" runat="server"/>-->
+                <!--body-->
+                <asp:Panel CssClass="err-top" Visible="false" ID="errorMessage" runat="server">
+                </asp:Panel>
+                <div class="main-content">
+                    <asp:ContentPlaceHolder ID="PageBody" runat="server"/>
+                </div>
+                <!--Footer
+                <WlkMi:HVFooter ID="Footer" runat="server" />-->
+            </div>
+        </form>
+    </body>
+
+    <script type="text/javascript">
+        var gWebTrendsCheck = false;
+        var gDomain = "www.microsofthsg.com"
+        document.write("<script type='text/javascript' src='https://" + gDomain + "/wtBVT.js'><\/script>");
+        var gDcsId="dcszg2e5izkwpxgiqu5mx6ag8_4c8r";
+        var gTrackEvents=1;
+        var gFpcDom="www.wlkmi.com";
+        var gFpc="WT_FPC";
+    </script>
+    <noscript>
+        <div>
+            <img alt="DCSIMG" id="DCSIMG" width="1" height="1" src="https://www.microsofthsg.com/dcszg2e5izkwpxgiqu5mx6ag8_4c8r/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" />
+        </div>
+    </noscript>
+    <script language="javascript" type="text/javascript" src="js/main.js"></script>
+</html>

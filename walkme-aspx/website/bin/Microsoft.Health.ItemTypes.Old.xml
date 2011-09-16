@@ -1,0 +1,2890 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Health.ItemTypes.Old</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Health.ItemTypes.Old.AerobicSession">
+            <summary>
+            Represents a health record item type that encapsulates an aerobic session.
+            </summary>
+            <remarks>
+            Note: Please use the new exercise type instead of this type.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession"/> class with default values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> 
+            method is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession"/> class with 
+            the specified date and time.
+            </summary>
+            
+            <param name="when">
+            The date/time when the aerobic session occurred.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,Microsoft.Health.ItemTypes.AerobicData)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSession"/> class with 
+            the specified date and time and summary.
+            </summary>
+            
+            <param name="when">
+            The date/time when the aerobic session occurred.
+            </param>
+            
+            <param name="session">
+            The summary information about the aerobic session.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when"/> or <paramref name="session"/> parameter 
+            is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.AerobicSession.TypeId">
+            <summary>
+            The unique identifier for the item type.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this AerobicSession instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the aerobic session data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml"/> is not
+            an aerobic-session node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the aerobic session data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the aerobic session data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSession.ToString">
+            <summary>
+            Gets a string representation of the aerobic session item.
+            </summary>
+            
+            <returns>
+            A string representation of the aerobic session item.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSession.When">
+            <summary>
+            Gets or sets the date/time when the aerobic session occurred.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime"/> instance. 
+            The value defaults to the current year, month, and day.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSession.Session">
+            <summary>
+            Gets or sets the aerobic session data.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.AerobicData"/> instance containing the summary 
+            information for the session.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSession.SessionSamples">
+            <summary>
+            Gets or sets the session samples.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples"/> instance.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSession.LapSessions">
+            <summary>
+            Gets the lap summary data for the session.
+            </summary>
+            
+            <value>
+            A collection of items representing summary data for a lap in
+            the session.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples">
+            <summary>
+            Contains the various sample sets that can be collected during aerobic
+            activity.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples"/> class with 
+            default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary> 
+            Populates the data for the aerobic session samples from the XML.
+            </summary>
+            
+            <param name="navigator"> 
+            The XML node representing the aerobic session samples.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary> 
+            Writes the aerobic session samples to the specified XML writer.
+            </summary>
+            
+            <param name="nodeName">
+            The name of the outer element for the aerobic session samples.
+            </param>
+            
+            <param name="writer"> 
+            The XmlWriter to write the aerobic session samples to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.HeartRateSamples">
+            <summary>
+            Gets or sets the heart rate samples.
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.DistanceSamples">
+            <summary>
+            Gets or sets the distance samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.SpeedSamples">
+            <summary>
+            Gets or sets the speed samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.PaceSamples">
+            <summary>
+            Gets or sets the pace samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.PowerSamples">
+            <summary>
+            Gets or sets the power samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.CadenceSamples">
+            <summary>
+            Gets or sets the cadence samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.TemperatureSamples">
+            <summary>
+            Gets or sets the temperature samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.AltitudeSamples">
+            <summary>
+            Gets or sets the altitude samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.AirPressureSamples">
+            <summary>
+            Gets or sets the air pressure samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.NumberOfStepsSamples">
+            <summary>
+            Gets or sets the number of steps sample.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.NumberOfAerobicStepsSamples">
+            <summary>
+            Gets or sets the number of aerobic steps sample.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.AerobicSessionSamples.AerobicStepMinutesSamples">
+            <summary>
+            Gets or sets the number of aerobic step minutes sample.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> instance representing the samples.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.EncounterV1">
+            <summary>
+            Represents a health record item type that encapsulates a medical encounter.
+            </summary>
+            <remarks>
+            Note: Please use the new version of this data type instead of this version.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.EncounterV1"/> class with default values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.EncounterV1"/> class with the 
+            specified date and time.
+            </summary>
+            
+            <param name="when">
+            The date/time for the medical encounter.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.EncounterV1"/> class with the 
+            specified date and time.
+            </summary>
+            
+            <param name="when">
+            The date/time for the medical encounter.
+            </param>
+            
+            <param name="type">
+            The type of the medical encounter.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when"/> parameter is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="type"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.EncounterV1.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+            <value>
+            A GUID.
+            </value>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this medical encounter instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the medical encounter data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml"/> is not
+            a medical encounter node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the medical encounter data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the medical encounter data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Old.EncounterV1.When"/> property has not been set.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.EncounterV1.ToString">
+            <summary>
+            Gets a string representation of the encounter item.
+            </summary>
+            
+            <returns>
+            A string representation of the encounter item.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.When">
+            <summary>
+            Gets or sets the date/time when the medical encounter occurred.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime"/> instance representing 
+            the date. The default value is the current year, month, and day.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.Type">
+            <summary>
+            Gets or sets the type of medical encounter.
+            </summary>
+            
+            <value>
+            A string representing the encounter type.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the type should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> is <b>null</b>, empty, or contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.Id">
+            <summary>
+            Gets or sets the identifier for the medical encounter.
+            </summary>
+            
+            <value>
+            A string representing the encounter identifier.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the identifier should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.Duration">
+            <summary>
+            Gets or sets the encounter duration.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.DurationValue"/>.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the duration should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.Location">
+            <summary>
+            Gets or sets the encounter location.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.Address"/> representing the location.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the location should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.EncounterV1.ConsentGranted">
+            <summary>
+            Gets a value indicating whether consent has been granted.
+            </summary>
+            
+            <value>
+            <b>true</b>if consent has been granted for this medical encounter; 
+            otherwise, <b>false</b>. If <b>null</b>, it is unknown whether consent has been granted.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1">
+            <summary>
+            Represents a health record item type that encapsulates a family history.
+            </summary>
+            <remarks>Note: Please use the new version of this data type instead of this version.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1"/> class 
+            with default values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.#ctor(Microsoft.Health.ItemTypes.CodableValue)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1"/> class 
+            specifying the mandatory values.
+            </summary>
+            
+            <param name="condition">
+            The condition for the family history.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="condition"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+            <value>
+            A GUID.
+            </value>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this family history instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the family history data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml"/> is not
+            a family history node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the family history data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the family history data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Condition"/> has not been set.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.ToString">
+            <summary>
+            Gets a string representation of the family history item.
+            </summary>
+            
+            <returns>
+            A string representation of the family history item.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Condition">
+            <summary>
+            Gets or sets the condition for the family history condition.
+            </summary>
+            
+            <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the condition.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Relationship">
+            <summary>
+            Gets or sets the relationship for the family history condition.
+            </summary>
+            
+            <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the 
+            relationship.
+            </value> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the relationship should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.DateOfBirth">
+            <summary>
+            Gets or sets the date of birth for the family history.
+            </summary>
+            
+            <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate"/> representing the date. 
+            The default value is the current year, month, and day.
+            </value> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.AgeOfOnset">
+            <summary>
+            Gets or sets the age of onset for the condition.
+            </summary>
+            
+            <value>
+            An integer representing the age.
+            </value>
+            
+            <remarks>
+            If the age of onset is not known, the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value"/> parameter is negative.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.AgeOfResolution">
+            <summary>
+            Gets or sets the age of resolution for the condition.
+            </summary>
+            
+            <value>
+            An integer representing the age.
+            </value> 
+            
+            <remarks>
+            If the age of resolution is not known, the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value"/> parameter is negative.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Duration">
+            <summary>
+            Gets or sets the duration for the family history condition.
+            </summary>
+            
+            <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.DurationValue"/> representing the duration.
+            </value> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the duration should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Severity">
+            <summary>
+            Gets or sets the severity for the family history condition.
+            </summary>
+            
+            <value>
+            A string representing the severity.
+            </value> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the severity should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.IsRecurring">
+            <summary>
+            Gets or sets a value indicating whether this is a recurring 
+            condition.
+            </summary>
+            
+            <remarks>
+            <b>true</b> if this is a recurring condition; otherwise, <b>false</b>.
+            If <b>null</b>, it is unknown whether this condition is recurring or not.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.FamilyHistoryV1.Status">
+            <summary>
+            Gets or sets the status for the family history condition.
+            </summary>
+            
+            <value>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing 
+            the status.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the status should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.ImmunizationV1">
+            <summary>
+            Represents health record item type that encapsulates an immunization.
+            </summary>
+            <remarks>
+            Note: Please use the new version of this data type instead of this version.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.ImmunizationV1"/> class with 
+            default values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.ApproximateDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.ImmunizationV1"/> class 
+            specifying the mandatory values.
+            </summary>
+            
+            <param name="name">
+            The name of the immunization.
+            </param>
+            
+            <param name="dateAdministrated">
+            The approximate date that the immunization was adminstrated.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name"/> or <paramref name="dateAdministrated"/> parameter is null.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.#ctor(Microsoft.Health.ItemTypes.CodableValue)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.ImmunizationV1"/> class 
+            specifying the mandatory values.
+            </summary>
+            
+            <param name="name">
+            The name of the immunization.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="name"/> parameter is null.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.ImmunizationV1.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+            <value>
+            A GUID.
+            </value>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Old.ImmunizationV1"/> instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the immunization data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml"/> is not
+            an immunization node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the immunization data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the immunization data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Name"/> or <see cref="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.DateAdministrated"/> has not been set.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ImmunizationV1.ToString">
+            <summary>
+            Gets a string representation of the immunization item.
+            </summary>
+            
+            <returns>
+            A string representation of the immunization item.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Name">
+            <summary>
+            Gets or sets the name of the immunization.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> instance representing the name.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is null during set.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.DateAdministrated">
+            <summary>
+            Gets or sets the date the immunization was administrated.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime"/> instance representing the date.
+            </value> 
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is null.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Administrator">
+            <summary>
+            Gets or sets the person or organization that administered the 
+            immunization.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem"/> instance representing the person.
+            </value> 
+            
+            <remarks>
+            Set the value to null if the administrator should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Manufacturer">
+            <summary>
+            Gets or sets the manufacturer of the vaccine.
+            </summary>
+            
+            <value>
+            A string representing the manufacturer.
+            </value> 
+            
+            <remarks>
+            Set the value to null if the manufacturer should not be stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Lot">
+            <summary>
+            Gets or sets the lot of the vaccine.
+            </summary>
+            
+            <value>
+            A string representing the lot.
+            </value> 
+            
+            <remarks>
+            Set the value to null if the lot should not be stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Route">
+            <summary>
+            Gets or sets the medical route for the immunization.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> instance representing the route.
+            </value> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.ExpirationDate">
+            <summary>
+            Gets or sets the expiration date for the vaccine.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDate"/> instance representing the date.
+            </value> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Sequence">
+            <summary>
+            Gets or sets the sequence for the immunization.
+            </summary>
+            
+            <value>
+            A string representing the sequence.
+            </value>
+            
+            <remarks>
+            Set the value to null if the consent should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.AnatomicSurface">
+            <summary>
+            Gets or sets the anatomic surface for the immunization.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> instance representing the surface.
+            </value>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.AdverseEvent">
+            <summary>
+            Gets or sets any adverse event description for the immunization.
+            </summary>
+            
+            <value>
+            A string representing the event description.
+            </value> 
+            
+            <remarks>
+            Set the value to null if the description should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ImmunizationV1.Consent">
+            <summary>
+            Gets or sets the consent description for the immunization.
+            </summary>
+            
+            <value>
+            A string representing the consent description.
+            </value> 
+            
+            <remarks>
+            Set the value to null if the consent should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.ItemTypeOldRegistrar">
+            <summary>
+            Defines a method for registering all the health record item types with the
+            <see cref="T:Microsoft.Health.ItemTypeManager"/> that are in this assembly.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ItemTypeOldRegistrar.RegisterAssemblyHealthRecordItemTypes">
+            <summary>
+            Registers all the health record item types in this assembly with the 
+            <see cref="T:Microsoft.Health.ItemTypeManager"/>.
+            </summary>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.LabTestResultsV1">
+            <summary>
+            A series of lab test results.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResults"/> 
+            class with default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1})">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResults"/> 
+            class with mandatory parameters.
+            </summary>
+            
+            <param name="labGroups">Lab groups is a set of lab results.</param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="labGroups"/> parameter is <b> null </b>.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.LabTestResults"/> instance from the data in the XML. 
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the lab test results data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml"/> is not
+            a lab test results node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the lab test results data to the specified XmlWriter.
+            </summary> 
+            
+            <param name="writer">
+            The XmlWriter to write the lab test results data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> parameter is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.Groups"/> is <b>null</b> or empty.
+            </exception> 
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.ToString">
+             <summary>
+             Gets a string representation of the lab test results item.
+             </summary> 
+            
+             <returns>
+             A string representation of the lab test results item.
+             </returns>
+             
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.When">
+            <summary>
+            Gets or sets the date and time of the lab tests results.  
+            </summary>
+            
+            <remarks>
+            The date and time should be set to <b> null </b> if they are 
+            unknown. 
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.Groups">
+            <summary>
+            Gets a set of lab results.
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultsV1.OrderedBy">
+            <summary>
+            Gets or sets the information about the organization which
+            ordered the lab tests.
+            </summary>
+            
+            <remarks>
+            It should be set to <b> null</b> if it is unknown. 
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1">
+            <summary>
+             A set of lab test results.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1"/> 
+            class with default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.#ctor(Microsoft.Health.ItemTypes.CodableValue)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultGroup"/> 
+            class with group name.
+            </summary>
+            
+            <param name="groupName"> 
+            The name of this set of tests.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="groupName"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1"/> instance from the data in the XML. 
+            </summary>
+            
+            <param name="navigator">
+            The XML to get the lab test results group type data from.
+            </param> 
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="navigator"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.WriteXml(System.String,System.Xml.XmlWriter)">
+             <summary>
+             Writes the lab test results group type data to the specified XmlWriter.
+             </summary> 
+             
+             <param name="nodeName">
+             The name of the node to write XML output. 
+             </param>
+             
+             <param name="writer">
+             The XmlWriter to write the lab test results group type data to.
+             </param> 
+             
+             <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName"/> parameter is <b> null </b> or empty.
+             </exception>
+             
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer"/> parameter is <b> null </b>.
+             </exception>
+            
+             <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.GroupName"/> parameter is <b> null</b>.
+             </exception>
+             
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.ToString">
+             <summary>
+             Gets a string representation of the lab test results group type item.
+             </summary> 
+            
+             <returns>
+             A string representation of the lab test results group type item.
+             </returns>
+             
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.GroupName">
+            <summary>
+            Gets or sets the name of this set of tests.  
+            </summary>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.LaboratoryName">
+            <summary>
+            Gets or sets the information about the laboratory which performed 
+            this set of tests.
+            </summary>
+            
+            <remarks>
+            Laboratory name should be set to <b>null</b> if it is unknown.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.Status">
+            <summary>
+            Gets or sets the overall status of this group and the sub group tests.  
+            </summary>
+            
+            <remarks>
+            The status can be incomplete, pending, processing, etc. It should be 
+            set to <b>null</b> if it is unknown. 
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.SubGroups">
+            <summary>
+            Gets lab test result sub groups.  
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultGroupV1.Results">
+            <summary>
+            Gets a set of results for this group.
+            </summary>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1">
+            <summary>
+            A single laboratory test.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultDetails"/> 
+            class with default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.LabTestResultDetails"/> instance from the data in the XML. 
+            </summary>
+            
+            <param name="navigator">
+            The XML to get the lab test result type data from.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If the first node in <paramref name="navigator"/> is not
+            a lab test result type node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary>
+            Writes the lab test result type data to the specified XmlWriter.
+            </summary> 
+            
+            <param name="nodeName">
+            The name of the node to write XML output.
+            </param>
+            
+            <param name="writer">
+            The XmlWriter to write the lab test result type data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName"/> is <b> null </b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b> null </b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.ToString">
+             <summary>
+             Gets a string representation of the lab test result type item.
+             </summary> 
+            
+             <returns>
+             A string representation of the lab test result type item.
+             </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.When">
+            <summary>
+            Gets or sets date and the time of the laboratory test.  
+            </summary>
+            
+            <remarks>
+            They should be set to <b>null</b> if they are unknown. 
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.Name">
+             <summary>
+             Gets or sets name of the laboratory test.  
+             </summary>
+             
+             <remarks>
+             It should be set to <b>null</b> or empty if it is unknown.
+             </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.Substance">
+             <summary>
+             Gets or sets substance that is tested.  
+             </summary>
+             
+             <remarks>
+             It should be set to <b>null</b> if it is unknown.
+             </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.CollectionMethod">
+            <summary>
+            Gets or sets the collection method for the laboratory test.  
+            </summary>
+            
+            <remarks>
+            It should be set to <b>null</b> if it is unknown.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.ClinicalCode">
+            <summary>
+            Gets or sets the clinical code for the lab tests.  
+            </summary>
+            
+            <remarks>
+            It should be set to <b>null</b> if it is unknown.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.Value">
+            <summary>
+            Gets or sets the clinical value within a laboratory result. 
+            </summary>
+            
+            <remarks>
+            The type of value is defined within a laboratory result, which includes 
+            value, unit, reference and toxic range. It should be set to <b>null</b> 
+            if it is unknown.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.Status">
+            <summary>
+            Gets or sets the status of the laboratory results.  
+            </summary>
+            
+            <remarks> 
+            Examples of status include complete and pending. It should be 
+            set to <b>null</b> if it is unknown. 
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultDetailsV1.Note">
+            <summary>
+            Gets or sets a note that augments the laboratory result.  
+            </summary>
+            
+            <remarks> 
+            There are two scenarios in which a note is typically added:
+            A note may provide additional information about interpreting 
+            the result beyond what is stored in the ranges associated with 
+            the value. 
+            Or, a note may be use to provide the textual result of a lab test
+            that does not have a measured value.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1">
+            <summary>
+            A clinical value within a laboratory result.
+            </summary>
+            
+            <remarks>
+            This type defines a clinical value within a laboratory result,
+            including value, unit, reference, and toxic ranges.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultValue"/> 
+            class with default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.#ctor(Microsoft.Health.ItemTypes.GeneralMeasurement)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.LabTestResultValue"/> 
+            class with the specified measurement.
+            </summary>
+            
+            <param name="measurement">
+            The value of the lab results.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="measurement"/> is <b> null </b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.LabTestResultValue"/> instance from the data in the XML.
+            </summary>
+            
+            <param name="navigator">
+            The XML to get the lab test result value type data from.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If the first node in <paramref name="navigator"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary>
+            Writes the lab test result value type data to the specified XmlWriter.
+            </summary> 
+            
+            <param name="nodeName">
+            The name of the node to write the XML.</param>
+            
+            <param name="writer">
+            The XmlWriter to write the lab test result value type data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="nodeName"/> is <b> null </b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b> null </b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.Measurement"/> is <b> null </b>.
+            </exception> 
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.ToString">
+             <summary>
+             Gets a string representation of the lab test result value type item.
+             </summary> 
+            
+             <returns>
+             A string representation of the lab test result value type item.
+             </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.Measurement">
+            <summary>
+            Gets or sets measurement.  
+            </summary>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="value"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.Ranges">
+            <summary>
+            Gets the ranges that are associated with this test.  
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LabTestResultValueV1.Flag">
+            <summary>
+            Gets a collection containing the flags for laboratory results.
+            </summary>
+            
+            <value>
+            Example values are normal, high, low.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.LapSession">
+            <summary>
+            Represents data about a single lap within an aerobic session.
+            </summary>
+            
+            <remarks>
+            A lap is a grouping of data based on an interval of time.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LapSession.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.LapSession"/> class 
+            with default values.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LapSession.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary> 
+            Populates the data for the lap from the XML.
+            </summary>
+            
+            <param name="navigator"> 
+            The XML node representing the lap.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.LapSession.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary> 
+            Writes the lap to the specified XML writer.
+            </summary>
+            
+            <param name="nodeName">
+            The name of the outer element for the lap.
+            </param>
+            
+            <param name="writer"> 
+            The XmlWriter to write the lap data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LapSession.Name">
+            <summary>
+            Gets or sets the name of the lap.
+            </summary>
+            
+            <value>
+            A string representing the lap name.
+            </value>
+            
+            <remarks>
+            This is a user- or device-defined name for the lap data.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LapSession.SecondsIntoSession">
+            <summary>
+            Gets or sets the seconds into the session of when then lap started.
+            </summary>
+            
+            <value>
+            A number representing the seconds.
+            </value>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.LapSession.LapData">
+            <summary>
+            Gets or sets the summary of aerobic data for the lap.
+            </summary>
+            
+            <value>
+            An <see cref="T:Microsoft.Health.ItemTypes.AerobicData"/> value representing the summary.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.MedicationV1">
+            <summary>
+            Represents a medication health record item.
+            </summary>
+            <remarks>
+            Note: Please use the new version of this data type instead of this version.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.MedicationV1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.MedicationV1"/> class with default 
+            values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.MedicationV1.TypeId">
+            <summary>
+            The unique identifier for the item type.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.MedicationV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this medication instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the medication data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            If the first node in <paramref name="typeSpecificXml"/> is not
+            a medication node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.MedicationV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the medication data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the medication data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.MedicationV1.ToString">
+            <summary>
+            Gets a string representation of the medication.
+            </summary>
+            
+            <returns>
+            A string representation of the medication.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Name">
+            <summary>
+            Gets or sets the medication name.
+            </summary>
+            
+            <returns>
+            A string representing the name.
+            </returns>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Code">
+            <summary>
+            Gets one or more medication codes.
+            </summary>
+            
+            <returns>
+            A collection of integers representing the medication code or codes.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DateDiscontinued">
+            <summary>
+            Gets or sets the date the medication was discontinued.
+            </summary>
+            
+            <returns>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime"/> instance representing the date.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DateFilled">
+            <summary>
+            Gets or sets the date the medication was filled.
+            </summary>
+            
+            <returns>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime"/> instance representing the date.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DatePrescribed">
+            <summary>
+            Gets or sets the date the medication was prescribed.
+            </summary>
+            
+            <returns>
+            An <see cref="T:Microsoft.Health.ItemTypes.ApproximateDateTime"/> instance representing the date.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.IsPrescribed">
+            <summary>
+            Gets whether medication is prescribed.
+            </summary>
+            
+            <returns>
+            <b>true</b> if medication has been prescribed, <b>false</b> if 
+            medication has not been prescribed, or <b>null</b> if t is unknown 
+            whether medication is prescribed.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Indication">
+            <summary>
+            Gets or sets the indication for the medication.
+            </summary>
+            
+            <returns>
+            A string representing the indication.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the indication should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.AmountPrescribed">
+            <summary>
+            Gets or sets the amount of medication prescribed.
+            </summary>
+            
+            <returns>
+            A string representing the amount.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the amount should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DoseValue">
+            <summary>
+            Gets or sets the dose value for the medication.
+            </summary>
+            
+            <returns>
+            An integer representing the dose value.
+            </returns> 
+            
+            <remarks>
+            If the dose value is unknown, set the value to <b>null</b>.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DoseUnit">
+            <summary>
+            Gets or sets the dose unit for the medication prescribed.
+            </summary>
+            
+            <returns>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the dose unit.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the dose unit should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.StrengthValue">
+            <summary>
+            Gets or sets the strength value for the medication.
+            </summary>
+            
+            <returns>
+            An integer representing the strength value.
+            </returns> 
+            
+            <remarks>
+            If the strength value is unknown, the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.StrengthUnit">
+            <summary>
+            Gets or sets the strength unit for the medication prescribed.
+            </summary>
+            
+            <returns>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the strength 
+            unit.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the strength unit should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Frequency">
+            <summary>
+            Gets or sets the frequency for the medication.
+            </summary>
+            
+            <returns>
+            A string representing the frequency.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the frequency should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Route">
+            <summary>
+            Gets or sets the route for the medication prescribed.
+            </summary>
+            
+            <returns>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the route.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the route should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Duration">
+            <summary>
+            Gets or sets the duration for the medication.
+            </summary>
+            
+            <returns>
+            A string representing the duration.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the duration should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DurationUnit">
+            <summary>
+            Gets or sets the duration unit for the medication.
+            </summary>
+            
+            <returns>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the duration 
+            unit.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the duration unit should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Refills">
+            <summary>
+            Gets or sets the number of total refills for the medication.
+            </summary>
+            
+            <returns>
+            An integer representing the number of refills.
+            </returns> 
+            
+            <remarks>
+            If the number of refills is not known the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.RefillsLeft">
+            <summary>
+            Gets or sets the number of remaining refills left of the medication.
+            </summary>
+            
+            <returns>
+            An integer representing the number of refills.
+            </returns> 
+            
+            <remarks>
+            If the number of refills left is not known the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.DaysSupply">
+            <summary>
+            Gets or sets the days supply of the medication.
+            </summary>
+            
+            <returns>
+            An integer representing the days supply.
+            </returns> 
+            
+            <remarks>
+            If the days supply is not known the value can be set to
+            <b>null</b>.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.PrescriptionDuration">
+            <summary>
+            Gets or sets the duration of the prescription.
+            </summary>
+            
+            <returns>
+            A <see cref="T:Microsoft.Health.ItemTypes.DurationValue"/> instance representing the duration.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the prescription duration should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Instructions">
+            <summary>
+            Gets or sets the instructions for the medication.
+            </summary>
+            
+            <returns>
+            A string representing the instructions.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the instructions should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.SubstitutionPermitted">
+            <summary>
+            Gets a value indicating whether a substitution for the medication 
+            is permitted.
+            </summary>
+            
+            <returns>
+            <b>true</b> if a substitute medication is permitted, <b>false</b> if a substitute 
+            medication is not permitted, or <b>null</b> if it is unknown whether a 
+            substitution is permitted.
+            </returns> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.Pharmacy">
+            <summary>
+            Gets or sets the pharmacy contact information.
+            </summary>
+            
+            <returns>
+            An instance of <see cref="T:Microsoft.Health.ItemTypes.ContactInfo"/> representing the pharmacy 
+            information.
+            </returns>
+            
+            <remarks>
+            Set the value to <b>null</b> if the pharmacy contact information
+            should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.MedicationV1.PrescriptionNumber">
+            <summary>
+            Gets or sets the prescription number for the medication.
+            </summary>
+            
+            <returns>
+            A string representing the prescription number.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the prescription number should not be 
+            stored.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.ProcedureV1">
+            <summary>
+            Represents a health record item type that encapsulates a medical procedure.
+            </summary>
+            <remarks>
+            Note: Please use the new version of this data type instead of this version.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ProcedureV1.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.ProcedureV1"/> class with default 
+            values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ProcedureV1.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.ProcedureV1"/> class with the 
+            specified date and time.
+            </summary>
+            
+            <param name="when">
+            The date/time for the procedure.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="when"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.ProcedureV1.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+            <value>
+            A GUID.
+            </value>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ProcedureV1.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this procedure instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the procedure data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in <paramref name="typeSpecificXml"/> is not
+            a procedure node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ProcedureV1.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the procedure data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the procedure data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.When"/> property has not been set.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.ProcedureV1.ToString">
+            <summary>
+            Gets a string representation of the procedure.
+            </summary>
+            
+            <returns>
+            A string representing the procedure.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.When">
+            <summary>
+            Gets or sets the date/time when the procedure occurred.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime"/> instance representing 
+            the date. The default value is the current year, month, and day.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.Title">
+            <summary>
+            Gets or sets the title for the procedure.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the title.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the title should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.PrimaryProvider">
+            <summary>
+            Gets or sets the primary provider contact information.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem"/> representing the information.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the primary provider contact information
+            should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.AnatomicLocation">
+            <summary>
+            Gets or sets the anatomic location for the procedure.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the location.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the location should not be 
+            stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.ProcedureV1.SecondaryProvider">
+            <summary>
+            Gets or sets the secondary provider contact information.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.PersonItem"/> representing the information.
+            </value>
+            
+            <remarks>
+            Set the value to <b>null</b> if the secondary provider contact information
+            should not be stored.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.Sample">
+            <summary>
+            Represents a single sample of a measurement or data point.
+            </summary>
+            
+            <remarks>
+            A sample is a single measurement within a larger activity. For instance,
+            the a single heart rate reading during an aerobic activity.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample"/> class with no value.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor(System.Double)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample"/> class with the 
+            specified time offset.
+            </summary>
+            
+            <param name="timeOffset">
+            The time offset in seconds from the start of the sample set.
+            </param>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="timeOffset"/> parameter is less than zero.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Sample.#ctor(System.Double,System.String)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Sample"/> class with the 
+            specified time offset and value.
+            </summary>
+            
+            <param name="timeOffset">
+            The time offset in seconds from the start of the sample set.
+            </param>
+            
+            <param name="value">
+            The value.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="timeOffset"/> parameter is less than zero.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Sample.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary> 
+            Populates the data for the measurement from the XML.
+            </summary>
+            
+            <param name="navigator"> 
+            The XML node representing the measurement.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Sample.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary> 
+            Writes the sample to the specified XML writer.
+            </summary>
+            
+            <param name="nodeName">
+            The name of the outer element for the sample.
+            </param>
+            
+            <param name="writer"> 
+            The XmlWriter to write the sample to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Sample.TimeOffset">
+            <summary>
+            Gets or sets the time offset in seconds from the start of the
+            sample set.
+            </summary>
+            
+            <value>
+            A number representing the time offset, in seconds.
+            </value>
+            
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The <paramref name="value"/> parameter is negative.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Sample.Note">
+            <summary>
+            Gets or sets a description of the sample.
+            </summary>
+            
+            <value>
+            A string representing the description.
+            </value>
+            
+            <remarks>
+            If the value is <b>null</b>, the note will not be saved.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentException">
+            If <paramref name="value"/> contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Sample.Value">
+            <summary>
+            Gets or sets the value of the sample.
+            </summary>
+            
+            <value>
+            A string representing the value of the sample.
+            </value>
+            
+            <remarks>
+            A sample value can consist of a single integer or a double, as for
+            a heart rate sample or speed sample. It can also be a more complex
+            value such as longitude and latitude for position. The format of the
+            value depends on the sample type.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.SampleSet">
+            <summary>
+            Represents a set of samples within a larger activity or reading.
+            </summary>
+            
+            <remarks>
+            An example of a sample set is a set of heart rate readings during an 
+            aerobic activity.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> class with no value.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> class with 
+            the specified start time for the set.
+            </summary>
+            
+            <param name="baseTime">
+            The time when the samples in the set started.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="baseTime"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.SampleSet.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime,System.String,Microsoft.Health.ItemTypes.CodableValue)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.SampleSet"/> class with 
+            the specified start time for the set.
+            </summary>
+            
+            <param name="baseTime">
+            The time when the samples in the set started.
+            </param>
+            
+            <param name="sampleUnit">
+            Text description of the unit of measure for the sample
+            values in this set.
+            </param>
+            
+            <param name="sampleUnitCode">
+            Vocabulary code for the unit of measure for the sample
+            values in this set.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="baseTime"/> or <paramref name="sampleUnitCode"/> parameter is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="sampleUnit"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.SampleSet.ParseXml(System.Xml.XPath.XPathNavigator)">
+            <summary> 
+            Populates the data for the sample set from the XML.
+            </summary>
+            
+            <param name="navigator"> 
+            The XML node representing the sample set.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="navigator"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.SampleSet.WriteXml(System.String,System.Xml.XmlWriter)">
+            <summary> 
+            Writes the sample set to the specified XML writer.
+            </summary>
+            
+            <param name="nodeName">
+            The name of the outer element for the sample set.
+            </param>
+            
+            <param name="writer"> 
+            The XmlWriter to write the sample set to.
+            </param>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="nodeName"/> parameter is <b>null</b> or empty.
+            </exception>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="writer"/> parameter is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            The <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.BaseTime"/>, <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnit"/>, or <see cref="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnitCode"/> 
+            property has not been set.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.SampleSet.BaseTime">
+            <summary>
+            Gets or sets the time when the sample set started recording samples.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime"/> representing the starting 
+            time for sample recording.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnit">
+            <summary>
+            Gets a text description of the unit of measure for the sample
+            values in this set.
+            </summary>
+            
+            <value>
+            A string representing the description.
+            </value>
+            
+            <exception cref="T:System.ArgumentException">
+            The <paramref name="value"/> parameter is <b>null</b>, empty, or contains only whitespace.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.SampleSet.SampleUnitCode">
+            <summary>
+            Gets the vocabulary code for the unit of measure for the sample
+            values in this set.
+            </summary>
+            
+            <value>
+            A <see cref="T:Microsoft.Health.ItemTypes.CodableValue"/> representing the vocabulary 
+            code.
+            </value>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.SampleSet.Samples">
+            <summary>
+            Gets a collection containing the samples in the set.
+            </summary>
+            
+            <value>
+            A collection of samples.
+            </value>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.Spirometer">
+            <summary>
+            Represents a health record item that encapsulates a single reading 
+            from a spirometer.
+            </summary>
+            <remarks>
+            Note: Please use the peak flow type instead of this type.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Spirometer.#ctor">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Spirometer"/> class with default values.
+            </summary>
+            
+            <remarks>
+            The item is not added to the health record until the
+            <see cref="M:Microsoft.Health.HealthRecordAccessor.NewItem(Microsoft.Health.HealthRecordItem)"/> method 
+            is called.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Spirometer.#ctor(Microsoft.Health.ItemTypes.HealthServiceDateTime)">
+            <summary>
+            Creates a new instance of the <see cref="T:Microsoft.Health.ItemTypes.Old.Spirometer"/> class 
+            specifying the mandatory values.
+            </summary>
+            
+            <param name="when">
+            The date and time when the spirometer reading occurred.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="when"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="F:Microsoft.Health.ItemTypes.Old.Spirometer.TypeId">
+            <summary>
+            Retrieves the unique identifier for the item type.
+            </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Spirometer.ParseXml(System.Xml.XPath.IXPathNavigable)">
+            <summary>
+            Populates this <see cref="T:Microsoft.Health.ItemTypes.Old.Spirometer"/> instance from the data in the XML.
+            </summary>
+            
+            <param name="typeSpecificXml">
+            The XML to get the spirometer data from.
+            </param>
+            
+            <exception cref="T:System.InvalidOperationException">
+            The first node in the <paramref name="typeSpecificXml"/> parameter 
+            is not a spirometer node.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Spirometer.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Writes the spirometer data to the specified XmlWriter.
+            </summary>
+            
+            <param name="writer">
+            The XmlWriter to write the spirometer use data to.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="writer"/> is <b>null</b>.
+            </exception>
+            
+            <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+            If <see cref="P:Microsoft.Health.ItemTypes.Old.Spirometer.When"/> is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.Spirometer.ToString">
+            <summary>
+            Gets a string representation of the spirometer reading.
+            </summary>
+            
+            <returns>
+            A string representing the vault of the spirometer reading.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.When">
+            <summary>
+            Gets or sets the date and time when the spirometer reading occurred.
+            </summary>
+            
+            <returns>
+            A <see cref="T:Microsoft.Health.ItemTypes.HealthServiceDateTime"/> instance representing the date 
+            and time.
+            </returns>
+            
+            <remarks>
+            The value defaults to the current year, month, and day.
+            </remarks>
+            
+            <exception cref="T:System.ArgumentNullException">
+            The <paramref name="value"/> parameter is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.ForcedExpiratoryVolume">
+            <summary>
+            Gets or sets the forced expiratory volume measured in 
+            liters per second (L/s).
+            </summary>
+            
+            <returns>
+            A number representing the volume.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the forced expiratory volume should not
+            be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.PeakExpiratoryFlow">
+            <summary>
+            Gets or sets the peak expiratory flow measured in liters per 
+            second (L/s).
+            </summary>
+            
+            <returns>
+            A number representing the peak flow.
+            </returns> 
+            
+            <remarks>
+            Set the value to <b>null</b> if the peak expiratory flow should not
+            be stored.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Warnings">
+            <summary>
+            Gets a collection of the warnings that occurred during the reading.
+            </summary>
+            
+            <returns>
+            A collection of strings representing the warnings.
+            </returns> 
+            
+            <remarks>
+            To add a warning, pass a string containing the warning message 
+            to the Add method of a returned collection.
+            <br/><br/>
+            Warnings indicate the reading was not normal. The text of the 
+            warning tells what is of concern.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Problems">
+            <summary>
+            Gets a collection of the problems that occurred during the reading.
+            </summary>
+            
+            <returns>
+            A collection of strings representing the problems.
+            </returns> 
+            
+            <remarks>
+            To add a problem, pass a string containing the problem message 
+            to the Add method of a returned collection.
+            <br/><br/>
+            Problems indicate the reading was not normal and indicates an 
+            action should be taken. The text of the problem tells what is of 
+            concern.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.FevOverFvc">
+            <summary>
+            Gets or sets the ratio of the Forced Expiratory Volume (FEV) over
+            Forced Vital Capacity (FVC).
+            </summary>
+            
+            <returns>
+            A collection of strings representing the ratio.
+            </returns> 
+            
+            <remarks>
+            In healthy adults, this value should be approximately 75-80%.
+            </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Fef25to75">
+            <summary>
+            Gets or sets the average flow of air coming out of the lungs 
+            during the middle (25-75%) portion of the expiration.
+            </summary>
+            
+            <returns>
+            A number representing the flow.
+            </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Fef25to50">
+            <summary>
+            Gets or sets the average flow of air coming out of the lungs 
+            during the middle (25-50%) portion of the expiration.
+            </summary>
+            
+            <returns>
+            A number representing the flow.
+            </returns> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Fif25to75">
+            <summary>
+            Gets or sets the average inspiratory flow 
+            during the middle (25-75%) portion of inspiration.
+            </summary>
+            
+            <returns>
+            A number representing the flow.
+            </returns> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.Fif25to50">
+            <summary>
+            Gets or sets the average inspiratory flow 
+            during the middle (25-50%) portion of inspiration.
+            </summary>
+            
+            <returns>
+            A number representing the flow.
+            </returns> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.ForcedExpiratoryTime">
+            <summary>
+            Gets or sets the length of expiration in seconds.
+            </summary>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.SlowVitalCapacity">
+            <summary>
+            Gets or sets the capacity of the lungs during expiration or
+            inspiration, measured in liters (L).
+            </summary>
+            
+            <returns>
+            A number representing the capacity in liters (L).
+            </returns> 
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.TidalVolume">
+             <summary>
+             Gets or sets the tidal volume, measured in liters (L).
+             </summary>
+             
+             <returns>
+             A number representing the volume measured in liters (L).
+             </returns> 
+             
+             <remarks>
+             This is the specific volume of air that is drawn
+             into and then expired out of the lungs.
+             </remarks>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.Spirometer.MaxVoluntaryVentilation">
+            <summary>
+            Gets or sets the maximum voluntary ventilation (MVV) measured
+            in liters per second (L/s).
+            </summary>
+            
+            <returns>
+            A number representing the ventilation measured in liters per 
+            second (L/s).
+            </returns> 
+            
+            <remarks>
+            For this test, patients inspire and expire
+            into the spirometer over and over again as fast 
+            as they can, for at least 12 seconds.
+            </remarks>
+            
+        </member>
+        <member name="T:Microsoft.Health.ItemTypes.Old.TestResultRangeV1">
+             <summary>
+             A test result range defines the minimum and the maximum of a specific test result value.
+             </summary>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.#ctor">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TestResultRange"/> 
+            class with default values.
+            </summary>
+            
+            <remarks>
+            Each test result can contain multiple ranges that are useful 
+            to interpret the result value. Examples include reference range 
+            and therapeutic range.
+            </remarks>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.#ctor(Microsoft.Health.ItemTypes.CodableValue,Microsoft.Health.ItemTypes.DoubleRange)">
+            <summary>
+            Initialize a new instance of the <see cref="T:Microsoft.Health.ItemTypes.TestResultRange"/> 
+            class with mandatory parameters.
+            </summary>
+            
+            <param name="type"> 
+            Type is the type of a test result.
+            </param>
+            
+            <param name="range"> 
+            Range is values of minimum and maximum of a test result.
+            </param>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If <paramref name="range"/> or <paramref name="type"/> is <b> null </b>.
+            </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.ParseXml(System.Xml.XPath.XPathNavigator)">
+             <summary>
+             Populates this <see cref="T:Microsoft.Health.ItemTypes.TestResultRange"/> instance from the data in the XML. 
+             </summary>
+             
+             <param name="navigator">
+             The XML to get the test result range data from.
+             </param>
+             
+             <exception cref="T:System.ArgumentNullException">
+             The first node in <paramref name="navigator"/> is <b>null</b>.
+             </exception>
+            
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.WriteXml(System.String,System.Xml.XmlWriter)">
+             <summary>
+             Writes the test result range data to the specified XmlWriter.
+             </summary> 
+             
+             <param name="nodeName">
+             The name of the node to write XML.
+             </param>
+             
+             <param name="writer">
+             The XmlWriter to write the test result range data to.
+             </param>
+             
+             <exception cref="T:System.ArgumentException">
+             If <paramref name="nodeName"/> is <b> null </b> or empty.
+             </exception>
+             
+             <exception cref="T:System.ArgumentNullException">
+             If <paramref name="writer"/> is <b> null </b>.
+             </exception>
+            
+             <exception cref="T:Microsoft.Health.HealthRecordItemSerializationException">
+             If <see cref="T:System.Type"> or </see><see cref="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.Range"/> is <b> null </b>.
+             </exception> 
+             
+        </member>
+        <member name="M:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.ToString">
+             <summary>
+             Gets a string representation of the test result range item.
+             </summary> 
+            
+             <returns>
+             A string representation of the test result range item.
+             </returns>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.Range">
+            <summary>
+            Gets or sets the range of the test result.
+            </summary>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If value is <b>null</b>.
+            </exception>
+            
+        </member>
+        <member name="P:Microsoft.Health.ItemTypes.Old.TestResultRangeV1.RangeType">
+            <summary>
+            Gets or sets the type of the range.  
+            </summary>
+            
+            <exception cref="T:System.ArgumentNullException">
+            If value is <b>null</b>.
+            </exception>
+            
+        </member>
+    </members>
+</doc>

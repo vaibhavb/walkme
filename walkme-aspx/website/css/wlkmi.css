@@ -1,0 +1,249 @@
+﻿body{color:#333;margin-top:15px;}
+.signin{color:#555;}
+
+a{color:#EC008C;text-decoration:none;}
+a:hover{color:#EC008C;text-decoration:underline;}
+
+.footer
+{
+	color:#716558;
+}
+.footer a
+{
+	color:#716558;
+}
+.btn-wrapper-signin{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left top;}
+.btn-wrapper-signin-hvr{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left center;}
+.btn-wrapper-signin-clk{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left bottom;}
+
+.btn-wrapper-signout{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left top;}
+.btn-wrapper-signout-hvr{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left center;}
+.btn-wrapper-signout-clk{background-image:url(../images/btn_signin.gif);background-repeat:no-repeat;background-position:left bottom;}
+
+.nav,.nav-item div.nav-link{background-image:url(../images/nav_bg.gif);background-position:left center;}
+.nav-body a{color:#555;}
+
+div.nav div.cnr-lft,.nav div.cnr-rt{background-image:url(../images/nav_cnrs.gif);}
+
+div.nav-item div.nav-spacer-l{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:left center;}
+div.nav-item div.nav-spacer-r{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:right center;}
+
+div.nav-item-on div.nav-spacer-l,div.nav-item-on div.nav-spacer-r,div.nav-item-on div.nav-spacer{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;}
+div.nav-item-on div.nav-link{background-image:url(../images/nav_hvr.gif);background-repeat:repeat-x}
+div.nav-item-on div.nav-link{color:#fff;}
+
+div.nav-item-hvr div.nav-spacer-l{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:left bottom;}
+div.nav-item-hvr div.nav-spacer-r{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:right bottom;}
+div.nav-item-hvr div.nav-spacer{background-image:none;}
+div.nav-item-hvr div.nav-link{background-image:url(../images/nav_bg.gif);background-position:left bottom;}
+div.nav-item-hvr div.nav-link{color:#333;}
+
+
+.page-head{background-color:#00b0d8;color:#fff;}
+.page-head div.cnrs-top div.cnr-left,.page-head div.cnrs-top div.cnr-right,.page-head div.cnrs-bot div.cnr-left,.page-head div.cnrs-bot div.cnr-right{background-image:url(../images/cnr_blue.gif);}
+.page-box,.bar-box{border:1px solid #ccc;}
+.page-box div.cnrs-top div.cnr-left,.page-box div.cnrs-top div.cnr-right,.page-box div.cnrs-bot div.cnr-left,.page-box div.cnrs-bot div.cnr-right{background-image:url(../images/cnr_white.gif);}
+
+.cnrs-top-brn div.cnr-left,.cnrs-top-brn div.cnr-right,.cnrs-bot-brn div.cnr-left,.cnrs-bot-brn div.cnr-right{background-image:url(../images/cnr_brown.gif);}
+cnrs-bot-brn div.cnr-left{background-repeat:no-repeat;background-position:left bottom;}
+cnrs-bot-brn div.cnr-right{background-repeat:no-repeat;background-position:right bottom;}
+
+
+.bar-box div.cnrs-top div.cnr-left,.bar-box div.cnrs-top div.cnr-right,.bar-box div.cnrs-bot div.cnr-left,.bar-box div.cnrs-bot div.cnr-right{background-image:url(../images/cnr_white.gif);}
+
+.tab-cnrs-top{border:1px solid #ccc;background:#fff;border-bottom:0px;}
+.tab-cnrs-top div.cnr-left,.tab-cnrs-top div.cnr-right{background-image:url(../images/cnr_white.gif);}
+
+
+div.nav-item-strt div.nav-spacer-l{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:left center;}
+div.nav-item-strt div.nav-spacer-r{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:right center;}
+div.nav-item-strt div.nav-spacer{background-image:none;}
+div.nav-item-strt div.nav-link{width:40px;float:left}
+div.nav-item-strt div.nav-link{color:#333;}
+
+div.nav-item-strt-on div.nav-spacer-l{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:left top;}
+div.nav-item-strt-on div.nav-spacer-r{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:right top;}
+div.nav-item-strt-on div.nav-spacer{background-image:none;}
+div.nav-item-strt-on div.nav-link{height:37px;width:40px;float:left;background-image:url(../images/nav_bg.gif);background-position:left top;}
+div.nav-item-strt-on div.nav-link{color:#333;}
+
+div.nav-item-strt-hvr div.nav-spacer-l{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:left bottom;}
+div.nav-item-strt-hvr div.nav-spacer-r{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:right bottom;}
+div.nav-item-strt-hvr div.nav-link{width:40px;height:37px;float:left;background-image:url(../images/nav_bg.gif);background-position:left bottom;}
+div.nav-item-strt-hvr div.nav-link{color:#333;}
+
+
+div.nav-item-end div.nav-spacer-l{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:left center;}
+div.nav-item-end div.nav-spacer-r{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:right center;}
+div.nav-item-end div.nav-spacer{background-image:none;}
+div.nav-item-end div.nav-link{float:left}
+div.nav-item-end div.nav-link{color:#333;}
+
+div.nav-item-end-on div.nav-spacer-l{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:left top;}
+div.nav-item-end-on div.nav-spacer-r{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:right top;}
+div.nav-item-end-on div.nav-spacer{background-image:none;}
+div.nav-item-end-on div.nav-link{height:37px;float:left;background-image:url(../images/nav_bg.gif);background-position:left top;}
+div.nav-item-end-on div.nav-link{color:#fff;}
+
+div.nav-item-end-hvr div.nav-spacer-l{background-image:url(../images/nav-item-cnrs.gif);background-repeat:no-repeat;background-position:left bottom;}
+div.nav-item-end-hvr div.nav-spacer-r{background-image:url(../images/cnrs_nav.gif);background-repeat:no-repeat;background-position:right bottom;}
+div.nav-item-end-hvr div.nav-link{height:37px;float:left;background-image:url(../images/nav_bg.gif);background-position:left bottom;}
+div.nav-item-end-hvr div.nav-link{color:#333;}
+
+
+div.nav-item-strt div.nav-home{width:40px;background:url(../images/icn_home.gif);background-position:center top;background-repeat:no-repeat;}
+div.nav-item-strt-on div.nav-home{width:40px;background:url(../images/icn_home.gif);background-position:center bottom;background-repeat:no-repeat;}
+div.nav-item-strt-hvr div.nav-home{width:40px;background:url(../images/icn_home.gif);background-position:center top;background-repeat:no-repeat;}
+
+
+.tbl-progress{background-color:#fcf7dd;}
+.tbl-progress td {border-top:1px solid #fff;}
+
+.button-frame{background-color:#EBE8DF;}
+
+
+.error{background-color:#FFFBD3;display:block;padding:10px;color:#2BB673;}
+
+hr.hr-print
+{
+    background-color:#00b0d8;
+}
+
+.tbl-print td
+{
+    border-bottom:1px solid #555;
+}
+.confirm-save
+{
+	
+}
+
+.tbl-form td
+{
+	border-bottom:2px solid #fff;
+	padding:5px;
+}
+
+.tabs-ul
+{
+	
+}
+.ui-tabs-hide { display: none; }
+
+.ui-tabs-nav, .ui-tabs-panel {
+}
+.ui-tabs-nav {
+    list-style: none;
+    margin:5px 0px 0px 15px;
+	padding: 0 0 0 3px;
+}
+.ui-tabs-nav:after { /* clearing without presentational markup, IE gets extra treatment */
+    display: block;
+    clear: both;
+    content: " ";
+}
+.ui-tabs-nav li {
+    float: left;
+    margin-right:20px;
+}
+.ui-tabs-nav a, .ui-tabs-nav a span {
+  
+}
+.ui-tabs-nav a {
+   
+}
+.ui-tabs-nav a:link, .ui-tabs-nav a:visited {
+    color: #ec008c;
+}
+.ui-tabs-nav .ui-tabs-selected a {
+   color: #888;
+   font-weight:bold;
+}
+.ui-tabs-nav a span {
+   
+}
+.ui-tabs-nav .ui-tabs-selected a span {
+  
+}
+.ui-tabs-nav .ui-tabs-selected a:link, .ui-tabs-nav .ui-tabs-selected a:visited,
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited { /* @ Opera, use pseudo classes otherwise it confuses cursor... */
+    cursor: text;
+}
+.ui-tabs-nav a:hover, .ui-tabs-nav a:focus, .ui-tabs-nav a:active,
+.ui-tabs-nav .ui-tabs-unselect a:hover, .ui-tabs-nav .ui-tabs-unselect a:focus, .ui-tabs-nav .ui-tabs-unselect a:active { /* @ Opera, we need to be explicit again here now... */
+    cursor: pointer;
+}
+.ui-tabs-disabled {
+    opacity: .4;
+    filter: alpha(opacity=40);
+}
+.ui-tabs-nav .ui-tabs-disabled a:link, .ui-tabs-nav .ui-tabs-disabled a:visited {
+    color: #000;
+}
+.ui-tabs-panel {
+    background: #fff; /* declare background color for container to avoid distorted fonts in IE while fading */
+}
+/*.ui-tabs-loading em {
+    padding: 0 0 0 20px;
+    background: url(loading.gif) no-repeat 0 50%;
+}*/
+
+/* Additional IE specific bug fixes... */
+* html .ui-tabs-nav { /* auto clear @ IE 6 & IE 7 Quirks Mode */
+    display: inline-block;
+}
+*:first-child+html .ui-tabs-nav  { /* auto clear @ IE 7 Standards Mode - do not group selectors, otherwise IE 6 will ignore complete rule (because of the unknown + combinator)... */
+    display: inline-block;
+}
+
+.sharesb{
+        clear:both;
+        position:relative;
+        padding:3px;
+        margin:15px 0 10px 0;
+}
+
+.sharesb p {
+        padding:0;
+        margin:0;
+}
+.sharesb p a{
+        position:absolute;
+        top:0px;
+        right:0px;
+        padding:3px 5px 0 0;
+}
+.sharesb h3{
+        padding:0 3px 0 0;
+        margin:0;
+        margin:0 5px 0 3px;
+        font-size:0.88em;
+        font-weight:normal;
+}
+.sharesb ul{
+        text-align:center;
+        list-style:none;
+        margin:6px 0 4px 0;
+        padding:0;
+}
+.sharesb ul li
+{
+	text-align: center;
+	display: inline;
+	padding: 0 4px 6px 18px;
+}
+        
+.sharesb ul li.delicious{
+        background:url("../images/delicious.gif") no-repeat 0 0;
+}
+.sharesb ul li.digg{
+        background:url("../images/digg.gif") no-repeat 0 0;
+}
+.sharesb ul li.reddit{
+        background:url("../images/reddit.gif") no-repeat 0 0;
+}
+.sharesb ul li.facebook{
+        background:url("../images/facebook.gif") no-repeat 0 0;
+}
+.sharesb ul li.stumbleupon{
+        background:url("../images/stumbleupon.gif") no-repeat 0 0;

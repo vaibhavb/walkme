@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="wlkmi" EntityNamespace="Microsoft.Health.Applications.WalkMe" ContextNamespace="Microsoft.Health.Applications.WalkMe" Class="DataClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=hstoyssql02t;Initial Catalog=WalkMe;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="WalkMeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.[group]" Member="groups">
+    <Type Name="group">
+      <Column Name="group_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="group_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="group_description" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="group_private" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="group_group_user_assoc" Member="group_user_assocs" ThisKey="group_id" OtherKey="group_id" Type="group_user_assoc" />
+    </Type>
+  </Table>
+  <Table Name="dbo.group_user_assoc" Member="group_user_assocs">
+    <Type Name="group_user_assoc">
+      <Column Name="group_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="role" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="group_group_user_assoc" Member="group" ThisKey="group_id" OtherKey="group_id" Type="group" IsForeignKey="true" />
+      <Association Name="user_group_user_assoc" Member="user" ThisKey="user_id" OtherKey="user_id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sync_settings" Member="sync_settings">
+    <Type Name="sync_setting">
+      <Column Name="sync_server_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sync_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sync_timestamp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="sync_frequency_hours" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="sync_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sync_job_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="sync_msg" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[user]" Member="users">
+    <Type Name="user">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="user_email" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="user_nickname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="user_zip" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_birthyear" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_groups" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Column Name="user_stride" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_weight" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hv_recordid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="user_last_login" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="user_last_client_ip" Type="System.String" DbType="NVarChar(32)" CanBeNull="true" />
+      <Column Name="user_total_steps" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="user_total_distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="user_weekly_steps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="user_weekly_distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="user_weekly_calories" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="user_monthly_steps" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="user_annual_steps" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="hv_personid" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="user_sharing_flag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="hv_last_sync_time" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="daily_goal_steps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="daily_goal_calories" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="daily_goal_aerobic_steps" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="daily_goal_distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="user_height" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="user_reg_complete_flag" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="created_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="hv_sync_entity_name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hv_sync_status" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="user_group_user_assoc" Member="group_user_assocs" ThisKey="user_id" OtherKey="user_id" Type="group_user_assoc" />
+      <Association Name="user_walk_log" Member="walk_logs" ThisKey="user_id" OtherKey="log_user" Type="walk_log" />
+    </Type>
+  </Table>
+  <Table Name="dbo.walk_log" Member="walk_logs">
+    <Type Name="walk_log">
+      <Column Name="log_id" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="log_steps" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="log_aerobicsteps" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="log_step_hourly_samples" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="log_aerobic_hourly_samples" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="log_calories" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="log_distance" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="log_weight" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="log_date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="log_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="updated_at" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="hv_item_id" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="user_walk_log" Member="user" ThisKey="log_user" OtherKey="user_id" Type="user" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.wc_audit_log" Member="wc_audit_logs">
+    <Type Name="wc_audit_log">
+      <Column Name="log_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="application_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="server_name" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="executing_entity" Type="System.String" DbType="NVarChar(128) NOT NULL" CanBeNull="false" />
+      <Column Name="event_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event_severity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="event_time" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="event_message" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
